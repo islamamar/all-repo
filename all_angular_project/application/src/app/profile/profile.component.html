@@ -1,0 +1,9 @@
+<p>profile works!</p> 
+<div *ngFor= " let follower of Followers"> 
+    <a [routerLink]="['/followers',follower.id]">{{follower.name}}</a>
+</div> 
+
+
+
+
+

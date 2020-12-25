@@ -1,0 +1,12 @@
+"use strict";
+exports.__esModule = true;
+var date_1 = require("./date");
+var employee_1 = require("./employee");
+var curretdate = new date_1.Date(3, 10, 2020);
+var birthdate = new date_1.Date(16, 5, 1998);
+var date = new date_1.Date();
+console.log(curretdate.get_year());
+console.log(date.age(curretdate, birthdate));
+var date2 = new date_1.Date(3, 10, 2020);
+var emp = new employee_1.Employee("islam", date2, 2300);
+console.log(emp.get_employee_info());

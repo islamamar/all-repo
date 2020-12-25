@@ -1,0 +1,57 @@
+<div *ngIf='Students.length!=0; then someStudent else noStudent'></div>
+<ng-template #someStudent>
+ <table class=" table">
+     <tr *ngFor='let student of Students'>
+        <td>{{student.id}}</td> 
+        <td>{{student.name}}</td>
+        <td>{{student.GPA}}</td>
+        <td>{{student.unvisersity}}</td>
+        <td><button (click)="onRemove(student)">remove</button></td>
+        <td><button (click)="onUpdate(student)">update</button></td>
+    
+     </tr>
+ </table>
+</ng-template> 
+<ng-template #noStudent>
+there is no studnet 
+</ng-template>  
+
+<span>students greater than 90 </span>
+<div *ngFor='let student of Students'> 
+    
+    <div *ngIf='student.GPA >90 ; '>
+        {{student.name}}
+    </div>   
+
+</div> 
+<hr>  
+<span> students that are grater than 80 and less than 90</span>
+<div *ngFor='let student of Students'>
+    <div *ngIf='student.GPA >80 && student.GPA &lt; 90 ;'> 
+        {{student.name}}
+    </div>
+</div> 
+<hr>
+<span> student that greater than 60 and less than 80</span>
+<div *ngFor='let student of Students'>
+    <div *ngIf='student.GPA > 60  && student.GPA &lt; 80 ;'>
+            {{student.name}}
+    </div>
+</div>  
+<br>
+<br>
+
+<hr>
+<form class="form-group">
+    <label for='name'>name</label>
+    <input class="form-control" type="text" name='name'[(ngModel)]='name'/>
+  
+    <label for='GPA'>GPA</label>
+    <input class="form-control" type="number" name='gpa'[(ngModel)]='gpa'/>
+  
+    <label for='university'>university</label>
+    <input class="form-control" type="text" name='university'[(ngModel)]='university'/>
+    <button class="btn btn-primary" (click)='onAdd()'> Add new studnet</button> 
+</form>
+
+

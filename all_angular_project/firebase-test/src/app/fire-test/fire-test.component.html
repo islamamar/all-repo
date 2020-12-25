@@ -1,0 +1,11 @@
+<input type= "text"name ="courses" #course (keyup.enter) = " add(course)" >
+<button (click) = "ngOnDestroy()">offline </button>
+
+<div *ngFor = " let course of courses$  | async  "> 
+
+    {{course}}
+
+</div> 
+
+<p> {{courses$ | async | json }}</p> 
+<p> {{author$ | async | json }}</p>
